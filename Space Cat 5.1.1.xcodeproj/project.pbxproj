@@ -29,6 +29,8 @@
 		2CF06F021B2BD8EC00E67C87 /* GMSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */; };
 		2CF06F051B2BEABD00E67C87 /* GMProjectileNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F041B2BEABD00E67C87 /* GMProjectileNode.m */; };
 		2CF06F0A1B2BF38700E67C87 /* GMUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F091B2BF38700E67C87 /* GMUtil.m */; };
+		2CF06F0D1B2BFB6C00E67C87 /* GMSpaceDogNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F0C1B2BFB6C00E67C87 /* GMSpaceDogNode.m */; };
+		2CF06F101B2BFF3800E67C87 /* GMGroundNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F0F1B2BFF3800E67C87 /* GMGroundNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,10 @@
 		2CF06F041B2BEABD00E67C87 /* GMProjectileNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMProjectileNode.m; sourceTree = "<group>"; };
 		2CF06F081B2BF38700E67C87 /* GMUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMUtil.h; path = ../GMUtil.h; sourceTree = "<group>"; };
 		2CF06F091B2BF38700E67C87 /* GMUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMUtil.m; path = ../GMUtil.m; sourceTree = "<group>"; };
+		2CF06F0B1B2BFB6C00E67C87 /* GMSpaceDogNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMSpaceDogNode.h; sourceTree = "<group>"; };
+		2CF06F0C1B2BFB6C00E67C87 /* GMSpaceDogNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSpaceDogNode.m; sourceTree = "<group>"; };
+		2CF06F0E1B2BFF3800E67C87 /* GMGroundNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMGroundNode.h; sourceTree = "<group>"; };
+		2CF06F0F1B2BFF3800E67C87 /* GMGroundNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMGroundNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +148,14 @@
 				2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */,
 				2CF06EF81B2BC2E000E67C87 /* GMGamePlayScene.h */,
 				2CF06EF91B2BC2E000E67C87 /* GMGamePlayScene.m */,
+				2CF06F0E1B2BFF3800E67C87 /* GMGroundNode.h */,
+				2CF06F0F1B2BFF3800E67C87 /* GMGroundNode.m */,
 				2CF06EFD1B2BD5D600E67C87 /* GMMachineNode.h */,
 				2CF06EFE1B2BD5D600E67C87 /* GMMachineNode.m */,
 				2CF06F031B2BEABD00E67C87 /* GMProjectileNode.h */,
 				2CF06F041B2BEABD00E67C87 /* GMProjectileNode.m */,
+				2CF06F0B1B2BFB6C00E67C87 /* GMSpaceDogNode.h */,
+				2CF06F0C1B2BFB6C00E67C87 /* GMSpaceDogNode.m */,
 				2CF06F001B2BD8EC00E67C87 /* GMSpaceCatNode.h */,
 				2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */,
 				2C5AA5001B2B790000A5987D /* Images.xcassets */,
@@ -292,7 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF06F051B2BEABD00E67C87 /* GMProjectileNode.m in Sources */,
+				2CF06F0D1B2BFB6C00E67C87 /* GMSpaceDogNode.m in Sources */,
 				2CF06EFA1B2BC2E000E67C87 /* GMGamePlayScene.m in Sources */,
+				2CF06F101B2BFF3800E67C87 /* GMGroundNode.m in Sources */,
 				2CF06F0A1B2BF38700E67C87 /* GMUtil.m in Sources */,
 				2C5AA4F41B2B790000A5987D /* GMAppDelegate.m in Sources */,
 				2CF06F021B2BD8EC00E67C87 /* GMSpaceCatNode.m in Sources */,

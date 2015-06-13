@@ -10,6 +10,8 @@
 #import "GMMachineNode.h"
 #import "GMSpaceCatNode.h"
 #import "GMProjectileNode.h"
+#import "GMSpaceDogNode.h"
+#import "GMGroundNode.h"
 
 @implementation GMGamePlayScene
 
@@ -30,6 +32,14 @@
         GMSpaceCatNode *spaceCat = [GMSpaceCatNode spaceCatAtPosition:CGPointMake(machine.position.x, machine.position.y-2)];
         
         [self addChild:spaceCat];
+        
+        [self addSpaceDog];
+        
+        self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+        
+        GMGroundNode *ground = [GMGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
+        
+        [self addChild:ground];
         
     }
     return self;
@@ -57,5 +67,15 @@
     [projectile moveTowardsPosition:position];
 }
 
+
+- (void) addSpaceDog {
+    GMSpaceDogNode *spaceDogA = [GMSpaceDogNode spaceDogType:GMSpaceDogTypeA];
+    spaceDogA.position = CGPointMake(100, 300);
+    [self addChild:spaceDogA];
+    
+    GMSpaceDogNode *spaceDogB = [GMSpaceDogNode spaceDogType:GMSpaceDogTypeB];
+    spaceDogB.position = CGPointMake(200, 300);
+    [self addChild:spaceDogB];
+}
 
 @end
