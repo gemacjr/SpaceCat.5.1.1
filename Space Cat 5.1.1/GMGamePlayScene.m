@@ -13,11 +13,19 @@
 #import "GMSpaceDogNode.h"
 #import "GMGroundNode.h"
 #import "GMUtil.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface GMGamePlayScene ()
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 @property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+@property (nonatomic) NSTimeInterval totalGameTime;
+@property (nonatomic) NSInteger minSpeed;
+@property (nonatomic) NSTimeInterval addEnemyTimeInterval;
+@property (nonatomic) SKAction *damageSFX;
+@property (nonatomic) SKAction *explodeSFX;
+@property (nonatomic) SKAction *laserSFX;
+@property (nonatomic) AVAudioPlayer *backgroundMusic;
 
 
 @end
@@ -31,6 +39,10 @@
         
         self.lastUpdateTimeInterval = 0;
         self.timeSinceEnemyAdded = 0;
+        self.addEnemyTimeInterval = 1.5;
+        self.totalGameTime = 0;
+        self.minSpeed = GMSpaceDogMinSpeed;
+        
         /* Setup your scene here */
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
@@ -55,8 +67,29 @@
         
         [self addChild:ground];
         
+        [self setupSounds];
+        
     }
     return self;
+}
+
+- (void) didMoveToView:(SKView *)view
+{
+    [self.backgroundMusic play];
+}
+
+- (void) setupSounds {
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Gameplay" withExtension:@"mp3"];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic prepareToPlay];
+    
+    self.damageSFX = [SKAction playSoundFileNamed:@"Damage.caf" waitForCompletion:NO];
+    self.explodeSFX = [SKAction playSoundFileNamed:@"Explode.caf" waitForCompletion:NO];
+    self.laserSFX = [SKAction playSoundFileNamed:@"Laser.caf" waitForCompletion:NO];
+    
 }
 
 
@@ -79,6 +112,8 @@
     GMProjectileNode *projectile = [GMProjectileNode projectAtPosition:CGPointMake(machine.position.x, machine.position.y + machine.frame.size.height - 15)];
     [self addChild:projectile];
     [projectile moveTowardsPosition:position];
+    
+    [self runAction:self.laserSFX];
 }
 
 
@@ -104,13 +139,35 @@
 {
     if (self.lastUpdateTimeInterval) {
         self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+        self.totalGameTime += currentTime - self.lastUpdateTimeInterval;
     }
     
-    if (self.timeSinceEnemyAdded > 1.5) {
+    if (self.timeSinceEnemyAdded > self.addEnemyTimeInterval) {
         [self addSpaceDog];
         self.timeSinceEnemyAdded = 0;
     }
     self.lastUpdateTimeInterval = currentTime;
+    
+    if (self.totalGameTime > 480 ) {
+        //480 / 60 = 8 minutes
+        self.addEnemyTimeInterval = 0.50;
+        self.minSpeed = -160;
+    } else if (self.totalGameTime > 240 ) {
+        
+        // 240 / 60 = 4 minutes
+        
+        self.addEnemyTimeInterval = 0.65;
+        self.minSpeed = -150;
+        
+    } else if (self.totalGameTime > 120 ){
+        self.addEnemyTimeInterval = 0.75;
+        self.minSpeed = -125;
+        
+    } else if (self.totalGameTime > 30) {
+        self.addEnemyTimeInterval = 1.00;
+        self.minSpeed = -100;
+        
+    }
 }
 
  - (void) didBeginContact:(SKPhysicsContact *)contact
@@ -127,29 +184,27 @@
     }
     
     if (firstBody.categoryBitMask == GMCollisionCategoryEnemy && secondBody.categoryBitMask == GMCollisionCategoryProjectile) {
-        NSLog(@"BAM!");
+        
         
         GMSpaceDogNode *spaceDog = (GMSpaceDogNode *)firstBody.node;
         GMProjectileNode *projectile = (GMProjectileNode *)secondBody.node;
         
-        [spaceDog removeFromParent];
-        
-        [projectile removeFromParent];
-        
-        
-        
+        if ([spaceDog isDamaged]) {
+            [self runAction:self.explodeSFX];
+            [spaceDog removeFromParent];
+            [projectile removeFromParent];
+            [self createDebrisAtPosition:contact.contactPoint];
+        }
         
     } else if (firstBody.categoryBitMask == GMCollisionCategoryEnemy && secondBody.categoryBitMask == GMCollisionCategoryGround){
-        NSLog(@"Hit Ground!");
-        
+        [self runAction:self.damageSFX];
         GMSpaceDogNode *spaceDog = (GMSpaceDogNode *)firstBody.node;
-        
         [spaceDog removeFromParent];
-        
+        [self createDebrisAtPosition:contact.contactPoint];
         
     }
     
-    [self createDebrisAtPosition:contact.contactPoint];
+    
 }
 
 - (void) createDebrisAtPosition:(CGPoint)position

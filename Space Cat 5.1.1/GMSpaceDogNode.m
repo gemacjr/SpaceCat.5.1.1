@@ -15,20 +15,22 @@
 + (instancetype) spaceDogType:(GMSpaceDogType)type
 {
     GMSpaceDogNode *spaceDog;
+    spaceDog.damaged = NO;
     
     NSArray *textures;
     
     if (type == GMSpaceDogTypeA) {
         spaceDog = [self spriteNodeWithImageNamed:@"spacedog_A_1"];
         textures = @[[SKTexture textureWithImageNamed:@"spacedog_A_1"],
-                     [SKTexture textureWithImageNamed:@"spacedog_A_2"],
-                     [SKTexture textureWithImageNamed:@"spacedog_A_3"]];
+                     [SKTexture textureWithImageNamed:@"spacedog_A_2"]];
+        
+        spaceDog.type = GMSpaceDogTypeA;
     } else {
         spaceDog = [self spriteNodeWithImageNamed:@"spacedog_B_1"];
         textures = @[[SKTexture textureWithImageNamed:@"spacedog_B_1"],
                      [SKTexture textureWithImageNamed:@"spacedog_B_2"],
-                     [SKTexture textureWithImageNamed:@"spacedog_B_3"],
-                     [SKTexture textureWithImageNamed:@"spacedog_B_4"]];
+                     [SKTexture textureWithImageNamed:@"spacedog_B_3"]];
+        spaceDog.type = GMSpaceDogTypeB;
     }
     
     float scale = [GMUtil randomWithMin:85 max:100] / 100.0f;
@@ -38,11 +40,37 @@
     
     
     SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
-    [spaceDog runAction:[SKAction repeatActionForever:animation]];
+    
+    [spaceDog runAction:[SKAction repeatActionForever:animation]withKey:@"animation"];
     
     [spaceDog setupPhysicsBody];
     
     return spaceDog;
+}
+
+- (BOOL) isDamaged
+{
+    NSArray *textures;
+    
+    if (!_damaged) {
+        
+        [self removeActionForKey:@"animation"];
+        
+        if (self.type == GMSpaceDogTypeA) {
+            textures = @[[SKTexture textureWithImageNamed:@"spacedog_A_3"]];
+        } else {
+            textures = @[[SKTexture textureWithImageNamed:@"spacedog_B_4"]];
+        }
+        
+        SKAction *animation = [SKAction animateWithTextures:textures timePerFrame:0.1];
+        [self runAction:[SKAction repeatActionForever:animation] withKey:@"damage_animation"];
+        
+        _damaged = YES;
+        
+        return NO;
+    }
+    
+    return _damaged;
 }
 
 - (void) setupPhysicsBody

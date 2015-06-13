@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C157F871B2CB6DD0079E4EE /* Damage.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F831B2CB6DD0079E4EE /* Damage.caf */; };
+		2C157F881B2CB6DD0079E4EE /* Explode.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F841B2CB6DD0079E4EE /* Explode.caf */; };
+		2C157F891B2CB6DD0079E4EE /* Laser.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F851B2CB6DD0079E4EE /* Laser.caf */; };
+		2C157F8A1B2CB6DD0079E4EE /* PressStart.caf in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F861B2CB6DD0079E4EE /* PressStart.caf */; };
+		2C157F8E1B2CB8CA0079E4EE /* GameOver.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F8B1B2CB8CA0079E4EE /* GameOver.mp3 */; };
+		2C157F8F1B2CB8CA0079E4EE /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F8C1B2CB8CA0079E4EE /* Gameplay.mp3 */; };
+		2C157F901B2CB8CA0079E4EE /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F8D1B2CB8CA0079E4EE /* StartScreen.mp3 */; };
+		2C157F921B2CB8E10079E4EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C157F911B2CB8E10079E4EE /* AVFoundation.framework */; };
 		2C5AA4E21B2B790000A5987D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E11B2B790000A5987D /* Foundation.framework */; };
 		2C5AA4E41B2B790000A5987D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */; };
 		2C5AA4E61B2B790000A5987D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E51B2B790000A5987D /* UIKit.framework */; };
@@ -44,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C157F831B2CB6DD0079E4EE /* Damage.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Damage.caf; sourceTree = "<group>"; };
+		2C157F841B2CB6DD0079E4EE /* Explode.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Explode.caf; sourceTree = "<group>"; };
+		2C157F851B2CB6DD0079E4EE /* Laser.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Laser.caf; sourceTree = "<group>"; };
+		2C157F861B2CB6DD0079E4EE /* PressStart.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart.caf; sourceTree = "<group>"; };
+		2C157F8B1B2CB8CA0079E4EE /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
+		2C157F8C1B2CB8CA0079E4EE /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
+		2C157F8D1B2CB8CA0079E4EE /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
+		2C157F911B2CB8E10079E4EE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2C5AA4DE1B2B790000A5987D /* Space Cat 5.1.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat 5.1.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5AA4E11B2B790000A5987D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -88,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C157F921B2CB8E10079E4EE /* AVFoundation.framework in Frameworks */,
 				2C5AA4E41B2B790000A5987D /* CoreGraphics.framework in Frameworks */,
 				2C5AA4E61B2B790000A5987D /* UIKit.framework in Frameworks */,
 				2C5AA4E81B2B790000A5987D /* SpriteKit.framework in Frameworks */,
@@ -108,6 +125,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C157F821B2CB6B90079E4EE /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2C157F8B1B2CB8CA0079E4EE /* GameOver.mp3 */,
+				2C157F8C1B2CB8CA0079E4EE /* Gameplay.mp3 */,
+				2C157F8D1B2CB8CA0079E4EE /* StartScreen.mp3 */,
+				2C157F831B2CB6DD0079E4EE /* Damage.caf */,
+				2C157F841B2CB6DD0079E4EE /* Explode.caf */,
+				2C157F851B2CB6DD0079E4EE /* Laser.caf */,
+				2C157F861B2CB6DD0079E4EE /* PressStart.caf */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		2C5AA4D51B2B78FF00A5987D = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +161,7 @@
 		2C5AA4E01B2B790000A5987D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2C157F911B2CB8E10079E4EE /* AVFoundation.framework */,
 				2C5AA4E11B2B790000A5987D /* Foundation.framework */,
 				2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */,
 				2C5AA4E51B2B790000A5987D /* UIKit.framework */,
@@ -142,6 +174,7 @@
 		2C5AA4E91B2B790000A5987D /* Space Cat 5.1.1 */ = {
 			isa = PBXGroup;
 			children = (
+				2C157F821B2CB6B90079E4EE /* Sounds */,
 				2CF06F081B2BF38700E67C87 /* GMUtil.h */,
 				2CF06F091B2BF38700E67C87 /* GMUtil.m */,
 				2CF06EF51B2BC13400E67C87 /* GMTitleScene.h */,
@@ -279,9 +312,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C157F8F1B2CB8CA0079E4EE /* Gameplay.mp3 in Resources */,
 				2C5AA4EE1B2B790000A5987D /* InfoPlist.strings in Resources */,
+				2C157F8A1B2CB6DD0079E4EE /* PressStart.caf in Resources */,
+				2C157F891B2CB6DD0079E4EE /* Laser.caf in Resources */,
 				2C5AA5011B2B790000A5987D /* Images.xcassets in Resources */,
+				2C157F8E1B2CB8CA0079E4EE /* GameOver.mp3 in Resources */,
+				2C157F871B2CB6DD0079E4EE /* Damage.caf in Resources */,
 				2CF06EFC1B2BC51C00E67C87 /* Sprites.atlas in Resources */,
+				2C157F881B2CB6DD0079E4EE /* Explode.caf in Resources */,
+				2C157F901B2CB8CA0079E4EE /* StartScreen.mp3 in Resources */,
 				2C5AA4F71B2B790000A5987D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

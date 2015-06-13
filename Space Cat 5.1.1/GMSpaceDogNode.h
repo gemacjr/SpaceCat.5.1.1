@@ -16,7 +16,11 @@ typedef NS_ENUM(NSUInteger, GMSpaceDogType) {
 
 @interface GMSpaceDogNode : SKSpriteNode
 
+@property (nonatomic, getter = isDamaged) BOOL damaged;
+@property (nonatomic) GMSpaceDogType type;
+
 + (instancetype) spaceDogType:(GMSpaceDogType)type;
+
 
 
 @end
