@@ -29,6 +29,9 @@
 {
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
+    self.physicsBody.categoryBitMask = GMCollisionCategoryProjectile;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.contactTestBitMask = GMCollisionCategoryEnemy;
     
 }
 

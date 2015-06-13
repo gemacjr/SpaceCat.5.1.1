@@ -7,6 +7,7 @@
 //
 
 #import "GMSpaceDogNode.h"
+#import "GMUtil.h"
 
 @implementation GMSpaceDogNode
 
@@ -43,6 +44,10 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.velocity = CGVectorMake(0, -50);
+    self.physicsBody.categoryBitMask = GMCollisionCategoryEnemy;
+    self.physicsBody.collisionBitMask = 0;
+    self.physicsBody.contactTestBitMask = GMCollisionCategoryProjectile | GMCollisionCategoryGround;  // 0010 | 1000 = 1010
+    
 }
 
 @end

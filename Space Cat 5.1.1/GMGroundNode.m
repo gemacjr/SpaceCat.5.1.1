@@ -7,6 +7,7 @@
 //
 
 #import "GMGroundNode.h"
+#import "GMUtil.h"
 
 @implementation GMGroundNode
 
@@ -29,6 +30,10 @@
     self.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.frame.size];
     self.physicsBody.affectedByGravity = NO;
     self.physicsBody.dynamic = NO;
+    self.physicsBody.categoryBitMask = GMCollisionCategoryGround;
+    self.physicsBody.collisionBitMask = GMCollisionCategoryDebris;
+    self.physicsBody.contactTestBitMask = GMCollisionCategoryEnemy;
+    
 }
 
 @end

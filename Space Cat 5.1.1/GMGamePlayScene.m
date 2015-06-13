@@ -12,6 +12,7 @@
 #import "GMProjectileNode.h"
 #import "GMSpaceDogNode.h"
 #import "GMGroundNode.h"
+#import "GMUtil.h"
 
 @implementation GMGamePlayScene
 
@@ -36,6 +37,7 @@
         [self addSpaceDog];
         
         self.physicsWorld.gravity = CGVectorMake(0, -9.8);
+        self.physicsWorld.contactDelegate = self;
         
         GMGroundNode *ground = [GMGroundNode groundWithSize:CGSizeMake(self.frame.size.width, 22)];
         
@@ -78,4 +80,72 @@
     [self addChild:spaceDogB];
 }
 
+ - (void) didBeginContact:(SKPhysicsContact *)contact
+{
+    
+    SKPhysicsBody *firstBody, *secondBody;
+    
+    if (contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask){
+        firstBody = contact.bodyA;
+        secondBody = contact.bodyB;
+    } else {
+        firstBody = contact.bodyB;
+        secondBody = contact.bodyA;
+    }
+    
+    if (firstBody.categoryBitMask == GMCollisionCategoryEnemy && secondBody.categoryBitMask == GMCollisionCategoryProjectile) {
+        NSLog(@"BAM!");
+        
+        GMSpaceDogNode *spaceDog = (GMSpaceDogNode *)firstBody.node;
+        GMProjectileNode *projectile = (GMProjectileNode *)secondBody.node;
+        
+        [spaceDog removeFromParent];
+        
+        [projectile removeFromParent];
+        
+        
+        
+        
+    } else if (firstBody.categoryBitMask == GMCollisionCategoryEnemy && secondBody.categoryBitMask == GMCollisionCategoryGround){
+        NSLog(@"Hit Ground!");
+        
+        GMSpaceDogNode *spaceDog = (GMSpaceDogNode *)firstBody.node;
+        
+        [spaceDog removeFromParent];
+        
+        
+    }
+    
+    [self createDebrisAtPosition:contact.contactPoint];
+}
+
+- (void) createDebrisAtPosition:(CGPoint)position
+{
+    NSInteger numberOfPieces = [GMUtil randomWithMin:5 max:20];
+    
+    
+    
+    for (int i=0; i < numberOfPieces; i++) {
+        NSInteger randomPiece = [GMUtil randomWithMin:1 max:4];
+        NSString *imageName = [NSString stringWithFormat:@"debri_%ld", (long)randomPiece];
+        
+        SKSpriteNode *debris = [SKSpriteNode spriteNodeWithImageNamed:imageName];
+        debris.position = position;
+        [self addChild:debris];
+        
+        
+        debris.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:debris.frame.size];
+        debris.physicsBody.categoryBitMask = GMCollisionCategoryDebris;
+        debris.physicsBody.contactTestBitMask = 0;
+        debris.physicsBody.collisionBitMask = GMCollisionCategoryGround | GMCollisionCategoryDebris;
+        debris.name = @"Debris";
+        
+        
+        debris.physicsBody.velocity = CGVectorMake([GMUtil randomWithMin:-150 max:150], [GMUtil randomWithMin:150 max:350]);
+        
+        [debris runAction:[SKAction waitForDuration:2.0] completion:^{
+            [debris removeFromParent];
+        }];
+    }
+}
 @end
