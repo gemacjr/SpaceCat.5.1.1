@@ -14,11 +14,23 @@
 #import "GMGroundNode.h"
 #import "GMUtil.h"
 
+@interface GMGamePlayScene ()
+
+@property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+@property (nonatomic) NSTimeInterval timeSinceEnemyAdded;
+
+
+@end
+
 @implementation GMGamePlayScene
 
 
 -(id)initWithSize:(CGSize)size {
     if (self = [super initWithSize:size]) {
+        
+        
+        self.lastUpdateTimeInterval = 0;
+        self.timeSinceEnemyAdded = 0;
         /* Setup your scene here */
         
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"background_1"];
@@ -34,7 +46,7 @@
         
         [self addChild:spaceCat];
         
-        [self addSpaceDog];
+        
         
         self.physicsWorld.gravity = CGVectorMake(0, -9.8);
         self.physicsWorld.contactDelegate = self;
@@ -71,13 +83,34 @@
 
 
 - (void) addSpaceDog {
-    GMSpaceDogNode *spaceDogA = [GMSpaceDogNode spaceDogType:GMSpaceDogTypeA];
-    spaceDogA.position = CGPointMake(100, 300);
-    [self addChild:spaceDogA];
     
-    GMSpaceDogNode *spaceDogB = [GMSpaceDogNode spaceDogType:GMSpaceDogTypeB];
-    spaceDogB.position = CGPointMake(200, 300);
-    [self addChild:spaceDogB];
+    NSUInteger randomSpaceDog = [GMUtil randomWithMin:0 max:2];
+    
+    GMSpaceDogNode *spaceDog = [GMSpaceDogNode spaceDogType:randomSpaceDog];
+    float dy = [GMUtil randomWithMin:GMSpaceDogMinSpeed max:GMSpaceDogMaxSpeed];
+    spaceDog.physicsBody.velocity = CGVectorMake(0, dy);
+    
+    float y = self.frame.size.height + spaceDog.size.height;
+    float x = [GMUtil randomWithMin:10+spaceDog.size.width max:self.frame.size.width-spaceDog.size.width-10];
+    
+    spaceDog.position = CGPointMake(x, y);
+    
+    [self addChild:spaceDog];
+    
+    
+}
+
+- (void)update:(NSTimeInterval)currentTime
+{
+    if (self.lastUpdateTimeInterval) {
+        self.timeSinceEnemyAdded += currentTime - self.lastUpdateTimeInterval;
+    }
+    
+    if (self.timeSinceEnemyAdded > 1.5) {
+        [self addSpaceDog];
+        self.timeSinceEnemyAdded = 0;
+    }
+    self.lastUpdateTimeInterval = currentTime;
 }
 
  - (void) didBeginContact:(SKPhysicsContact *)contact

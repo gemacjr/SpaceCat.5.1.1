@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 static const int GMProjectileSpeed = 300;
+static const int GMSpaceDogMinSpeed = -100;
+static const int GMSpaceDogMaxSpeed = -50;
 
 typedef NS_OPTIONS(uint32_t, GMCollisionCategory) {
     GMCollisionCategoryEnemy        = 1 << 0,       // 0000
