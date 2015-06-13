@@ -15,6 +15,9 @@
 		2C157F8F1B2CB8CA0079E4EE /* Gameplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F8C1B2CB8CA0079E4EE /* Gameplay.mp3 */; };
 		2C157F901B2CB8CA0079E4EE /* StartScreen.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F8D1B2CB8CA0079E4EE /* StartScreen.mp3 */; };
 		2C157F921B2CB8E10079E4EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C157F911B2CB8E10079E4EE /* AVFoundation.framework */; };
+		2C157F991B2CC5180079E4EE /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F971B2CC5180079E4EE /* Explosion.sks */; };
+		2C157F9A1B2CC5180079E4EE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F981B2CC5180079E4EE /* spark.png */; };
+		2C157F9D1B2CC87C0079E4EE /* GMHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C157F9C1B2CC87C0079E4EE /* GMHudNode.m */; };
 		2C5AA4E21B2B790000A5987D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E11B2B790000A5987D /* Foundation.framework */; };
 		2C5AA4E41B2B790000A5987D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */; };
 		2C5AA4E61B2B790000A5987D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E51B2B790000A5987D /* UIKit.framework */; };
@@ -60,6 +63,10 @@
 		2C157F8C1B2CB8CA0079E4EE /* Gameplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Gameplay.mp3; sourceTree = "<group>"; };
 		2C157F8D1B2CB8CA0079E4EE /* StartScreen.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = StartScreen.mp3; sourceTree = "<group>"; };
 		2C157F911B2CB8E10079E4EE /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2C157F971B2CC5180079E4EE /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		2C157F981B2CC5180079E4EE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		2C157F9B1B2CC87C0079E4EE /* GMHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHudNode.h; sourceTree = "<group>"; };
+		2C157F9C1B2CC87C0079E4EE /* GMHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHudNode.m; sourceTree = "<group>"; };
 		2C5AA4DE1B2B790000A5987D /* Space Cat 5.1.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat 5.1.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5AA4E11B2B790000A5987D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -179,6 +186,8 @@
 				2CF06F091B2BF38700E67C87 /* GMUtil.m */,
 				2CF06EF51B2BC13400E67C87 /* GMTitleScene.h */,
 				2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */,
+				2C157F9B1B2CC87C0079E4EE /* GMHudNode.h */,
+				2C157F9C1B2CC87C0079E4EE /* GMHudNode.m */,
 				2CF06EF81B2BC2E000E67C87 /* GMGamePlayScene.h */,
 				2CF06EF91B2BC2E000E67C87 /* GMGamePlayScene.m */,
 				2CF06F0E1B2BFF3800E67C87 /* GMGroundNode.h */,
@@ -192,6 +201,8 @@
 				2CF06F001B2BD8EC00E67C87 /* GMSpaceCatNode.h */,
 				2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */,
 				2C5AA5001B2B790000A5987D /* Images.xcassets */,
+				2C157F971B2CC5180079E4EE /* Explosion.sks */,
+				2C157F981B2CC5180079E4EE /* spark.png */,
 				2CF06EFB1B2BC51C00E67C87 /* Sprites.atlas */,
 				2C5AA4EA1B2B790000A5987D /* Supporting Files */,
 			);
@@ -317,6 +328,8 @@
 				2C157F8A1B2CB6DD0079E4EE /* PressStart.caf in Resources */,
 				2C157F891B2CB6DD0079E4EE /* Laser.caf in Resources */,
 				2C5AA5011B2B790000A5987D /* Images.xcassets in Resources */,
+				2C157F9A1B2CC5180079E4EE /* spark.png in Resources */,
+				2C157F991B2CC5180079E4EE /* Explosion.sks in Resources */,
 				2C157F8E1B2CB8CA0079E4EE /* GameOver.mp3 in Resources */,
 				2C157F871B2CB6DD0079E4EE /* Damage.caf in Resources */,
 				2CF06EFC1B2BC51C00E67C87 /* Sprites.atlas in Resources */,
@@ -346,6 +359,7 @@
 				2CF06EFA1B2BC2E000E67C87 /* GMGamePlayScene.m in Sources */,
 				2CF06F101B2BFF3800E67C87 /* GMGroundNode.m in Sources */,
 				2CF06F0A1B2BF38700E67C87 /* GMUtil.m in Sources */,
+				2C157F9D1B2CC87C0079E4EE /* GMHudNode.m in Sources */,
 				2C5AA4F41B2B790000A5987D /* GMAppDelegate.m in Sources */,
 				2CF06F021B2BD8EC00E67C87 /* GMSpaceCatNode.m in Sources */,
 				2CF06EF71B2BC13400E67C87 /* GMTitleScene.m in Sources */,
