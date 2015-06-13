@@ -16,14 +16,17 @@
 		2C5AA4F41B2B790000A5987D /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AA4F31B2B790000A5987D /* GMAppDelegate.m */; };
 		2C5AA4F71B2B790000A5987D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AA4F51B2B790000A5987D /* Main.storyboard */; };
 		2C5AA4FA1B2B790000A5987D /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AA4F91B2B790000A5987D /* GMViewController.m */; };
-		2C5AA4FD1B2B790000A5987D /* GMMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AA4FC1B2B790000A5987D /* GMMyScene.m */; };
-		2C5AA4FF1B2B790000A5987D /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AA4FE1B2B790000A5987D /* Spaceship.png */; };
 		2C5AA5011B2B790000A5987D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AA5001B2B790000A5987D /* Images.xcassets */; };
 		2C5AA5081B2B790000A5987D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA5071B2B790000A5987D /* XCTest.framework */; };
 		2C5AA5091B2B790000A5987D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E11B2B790000A5987D /* Foundation.framework */; };
 		2C5AA50A1B2B790000A5987D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E51B2B790000A5987D /* UIKit.framework */; };
 		2C5AA5121B2B790000A5987D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C5AA5101B2B790000A5987D /* InfoPlist.strings */; };
 		2C5AA5141B2B790000A5987D /* Space_Cat_5_1_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5AA5131B2B790000A5987D /* Space_Cat_5_1_1Tests.m */; };
+		2CF06EF71B2BC13400E67C87 /* GMTitleScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */; };
+		2CF06EFA1B2BC2E000E67C87 /* GMGamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06EF91B2BC2E000E67C87 /* GMGamePlayScene.m */; };
+		2CF06EFC1B2BC51C00E67C87 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 2CF06EFB1B2BC51C00E67C87 /* Sprites.atlas */; };
+		2CF06EFF1B2BD5D600E67C87 /* GMMachineNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06EFE1B2BD5D600E67C87 /* GMMachineNode.m */; };
+		2CF06F021B2BD8EC00E67C87 /* GMSpaceCatNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,15 +54,21 @@
 		2C5AA4F61B2B790000A5987D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C5AA4F81B2B790000A5987D /* GMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMViewController.h; sourceTree = "<group>"; };
 		2C5AA4F91B2B790000A5987D /* GMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMViewController.m; sourceTree = "<group>"; };
-		2C5AA4FB1B2B790000A5987D /* GMMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMMyScene.h; sourceTree = "<group>"; };
-		2C5AA4FC1B2B790000A5987D /* GMMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMMyScene.m; sourceTree = "<group>"; };
-		2C5AA4FE1B2B790000A5987D /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		2C5AA5001B2B790000A5987D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2C5AA5061B2B790000A5987D /* Space Cat 5.1.1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space Cat 5.1.1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5AA5071B2B790000A5987D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		2C5AA50F1B2B790000A5987D /* Space Cat 5.1.1Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Space Cat 5.1.1Tests-Info.plist"; sourceTree = "<group>"; };
 		2C5AA5111B2B790000A5987D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2C5AA5131B2B790000A5987D /* Space_Cat_5_1_1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Space_Cat_5_1_1Tests.m; sourceTree = "<group>"; };
+		2CF06EF51B2BC13400E67C87 /* GMTitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMTitleScene.h; sourceTree = "<group>"; };
+		2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMTitleScene.m; sourceTree = "<group>"; };
+		2CF06EF81B2BC2E000E67C87 /* GMGamePlayScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMGamePlayScene.h; sourceTree = "<group>"; };
+		2CF06EF91B2BC2E000E67C87 /* GMGamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMGamePlayScene.m; sourceTree = "<group>"; };
+		2CF06EFB1B2BC51C00E67C87 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		2CF06EFD1B2BD5D600E67C87 /* GMMachineNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMachineNode.h; sourceTree = "<group>"; };
+		2CF06EFE1B2BD5D600E67C87 /* GMMachineNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMachineNode.m; sourceTree = "<group>"; };
+		2CF06F001B2BD8EC00E67C87 /* GMSpaceCatNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMSpaceCatNode.h; sourceTree = "<group>"; };
+		2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSpaceCatNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,15 +130,16 @@
 		2C5AA4E91B2B790000A5987D /* Space Cat 5.1.1 */ = {
 			isa = PBXGroup;
 			children = (
-				2C5AA4F21B2B790000A5987D /* GMAppDelegate.h */,
-				2C5AA4F31B2B790000A5987D /* GMAppDelegate.m */,
-				2C5AA4F51B2B790000A5987D /* Main.storyboard */,
-				2C5AA4F81B2B790000A5987D /* GMViewController.h */,
-				2C5AA4F91B2B790000A5987D /* GMViewController.m */,
-				2C5AA4FB1B2B790000A5987D /* GMMyScene.h */,
-				2C5AA4FC1B2B790000A5987D /* GMMyScene.m */,
-				2C5AA4FE1B2B790000A5987D /* Spaceship.png */,
+				2CF06EF51B2BC13400E67C87 /* GMTitleScene.h */,
+				2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */,
+				2CF06EF81B2BC2E000E67C87 /* GMGamePlayScene.h */,
+				2CF06EF91B2BC2E000E67C87 /* GMGamePlayScene.m */,
+				2CF06EFD1B2BD5D600E67C87 /* GMMachineNode.h */,
+				2CF06EFE1B2BD5D600E67C87 /* GMMachineNode.m */,
+				2CF06F001B2BD8EC00E67C87 /* GMSpaceCatNode.h */,
+				2CF06F011B2BD8EC00E67C87 /* GMSpaceCatNode.m */,
 				2C5AA5001B2B790000A5987D /* Images.xcassets */,
+				2CF06EFB1B2BC51C00E67C87 /* Sprites.atlas */,
 				2C5AA4EA1B2B790000A5987D /* Supporting Files */,
 			);
 			path = "Space Cat 5.1.1";
@@ -138,6 +148,11 @@
 		2C5AA4EA1B2B790000A5987D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2C5AA4F51B2B790000A5987D /* Main.storyboard */,
+				2C5AA4F21B2B790000A5987D /* GMAppDelegate.h */,
+				2C5AA4F31B2B790000A5987D /* GMAppDelegate.m */,
+				2C5AA4F81B2B790000A5987D /* GMViewController.h */,
+				2C5AA4F91B2B790000A5987D /* GMViewController.m */,
 				2C5AA4EB1B2B790000A5987D /* Space Cat 5.1.1-Info.plist */,
 				2C5AA4EC1B2B790000A5987D /* InfoPlist.strings */,
 				2C5AA4EF1B2B790000A5987D /* main.m */,
@@ -212,6 +227,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SwiftBeard;
 				TargetAttributes = {
+					2C5AA4DD1B2B790000A5987D = {
+						DevelopmentTeam = BXEL354SU6;
+					};
 					2C5AA5051B2B790000A5987D = {
 						TestTargetID = 2C5AA4DD1B2B790000A5987D;
 					};
@@ -243,7 +261,7 @@
 			files = (
 				2C5AA4EE1B2B790000A5987D /* InfoPlist.strings in Resources */,
 				2C5AA5011B2B790000A5987D /* Images.xcassets in Resources */,
-				2C5AA4FF1B2B790000A5987D /* Spaceship.png in Resources */,
+				2CF06EFC1B2BC51C00E67C87 /* Sprites.atlas in Resources */,
 				2C5AA4F71B2B790000A5987D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,9 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF06EFA1B2BC2E000E67C87 /* GMGamePlayScene.m in Sources */,
 				2C5AA4F41B2B790000A5987D /* GMAppDelegate.m in Sources */,
+				2CF06F021B2BD8EC00E67C87 /* GMSpaceCatNode.m in Sources */,
+				2CF06EF71B2BC13400E67C87 /* GMTitleScene.m in Sources */,
+				2CF06EFF1B2BD5D600E67C87 /* GMMachineNode.m in Sources */,
 				2C5AA4FA1B2B790000A5987D /* GMViewController.m in Sources */,
-				2C5AA4FD1B2B790000A5987D /* GMMyScene.m in Sources */,
 				2C5AA4F01B2B790000A5987D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Cat 5.1.1/Space Cat 5.1.1-Prefix.pch";
 				INFOPLIST_FILE = "Space Cat 5.1.1/Space Cat 5.1.1-Info.plist";
@@ -405,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Space Cat 5.1.1/Space Cat 5.1.1-Prefix.pch";
 				INFOPLIST_FILE = "Space Cat 5.1.1/Space Cat 5.1.1-Info.plist";
@@ -473,6 +496,7 @@
 				2C5AA5191B2B790000A5987D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C5AA51A1B2B790000A5987D /* Build configuration list for PBXNativeTarget "Space Cat 5.1.1Tests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +505,7 @@
 				2C5AA51C1B2B790000A5987D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
