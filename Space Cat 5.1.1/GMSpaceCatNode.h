@@ -10,4 +10,7 @@
 
 @interface GMSpaceCatNode : SKSpriteNode
 
++ (instancetype) spaceCatAtPosition:(CGPoint)position;
+-(void)performTap;
+
 @end
