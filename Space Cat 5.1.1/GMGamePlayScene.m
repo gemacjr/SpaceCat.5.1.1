@@ -9,6 +9,7 @@
 #import "GMGamePlayScene.h"
 #import "GMMachineNode.h"
 #import "GMSpaceCatNode.h"
+#import "GMProjectileNode.h"
 
 @implementation GMGamePlayScene
 
@@ -37,8 +38,23 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    for (UITouch *touch in touches) {
+        CGPoint position = [touch locationInNode:self];
+        
+        [self shootProjectileTowardsPosition:position];
+    }
+}
+
+-(void) shootProjectileTowardsPosition:(CGPoint)position
+{
     GMSpaceCatNode *spaceCat = (GMSpaceCatNode*)[self childNodeWithName:@"SpaceCat"];
     [spaceCat performTap];
+    
+    GMMachineNode *machine = (GMMachineNode *)[self childNodeWithName:@"Machine"];
+    
+    GMProjectileNode *projectile = [GMProjectileNode projectAtPosition:CGPointMake(machine.position.x, machine.position.y + machine.frame.size.height - 15)];
+    [self addChild:projectile];
+    [projectile moveTowardsPosition:position];
 }
 
 
