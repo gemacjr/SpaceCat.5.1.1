@@ -14,6 +14,8 @@
 #import "GMGroundNode.h"
 #import "GMUtil.h"
 #import <AVFoundation/AVFoundation.h>
+#import "GMHudNode.h"
+#import "GMGameOverNode.h"
 
 @interface GMGamePlayScene ()
 
@@ -26,6 +28,9 @@
 @property (nonatomic) SKAction *explodeSFX;
 @property (nonatomic) SKAction *laserSFX;
 @property (nonatomic) AVAudioPlayer *backgroundMusic;
+@property (nonatomic) BOOL gameOver;
+@property (nonatomic) BOOL restart;
+@property (nonatomic) BOOL gameOverDisplayed;
 
 
 @end
@@ -69,6 +74,10 @@
         
         [self setupSounds];
         
+        GMHudNode *hud = [GMHudNode hudAtPosition:CGPointMake(0, self.frame.size.height-20) inFrame:self.frame];
+        
+        [self addChild:hud];
+        
     }
     return self;
 }
@@ -95,11 +104,27 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    for (UITouch *touch in touches) {
-        CGPoint position = [touch locationInNode:self];
+    if ( !self.gameOver ) {
+        for (UITouch *touch in touches) {
+            CGPoint position = [touch locationInNode:self];
+            [self shootProjectileTowardsPosition:position];
+        }
+    } else if ( self.restart ) {
+        for (SKNode *node in [self children]) {
+            [node removeFromParent];
+        }
         
-        [self shootProjectileTowardsPosition:position];
+        GMGamePlayScene *scene = [GMGamePlayScene sceneWithSize:self.view.bounds.size];
+        [self.view presentScene:scene];
     }
+}
+
+- (void) performGameOver
+{
+    GMGameOverNode *gameOver = [GMGameOverNode gameOverAtPosition:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))];
+    [self addChild:gameOver];
+    self.restart = YES;
+    self.gameOverDisplayed = YES;
 }
 
 -(void) shootProjectileTowardsPosition:(CGPoint)position
@@ -168,6 +193,10 @@
         self.minSpeed = -100;
         
     }
+    
+    if ( self.gameOver && !self.gameOverDisplayed ) {
+        [self performGameOver];
+    }
 }
 
  - (void) didBeginContact:(SKPhysicsContact *)contact
@@ -194,6 +223,7 @@
             [spaceDog removeFromParent];
             [projectile removeFromParent];
             [self createDebrisAtPosition:contact.contactPoint];
+            [self addPoints:GMPointsPerHit];
         }
         
     } else if (firstBody.categoryBitMask == GMCollisionCategoryEnemy && secondBody.categoryBitMask == GMCollisionCategoryGround){
@@ -202,10 +232,25 @@
         [spaceDog removeFromParent];
         [self createDebrisAtPosition:contact.contactPoint];
         
+        [self loseLife];
+        
     }
     
     
 }
+
+-(void) addPoints:(NSInteger)points
+{
+    GMHudNode *hud = (GMHudNode *)[self childNodeWithName:@"HUD"];
+    [hud addPoints:points];
+}
+
+- (void) loseLife
+{
+    GMHudNode *hud = (GMHudNode *)[self childNodeWithName:@"HUD"];
+   self.gameOver = [hud loseLife];
+}
+
 
 - (void) createDebrisAtPosition:(CGPoint)position
 {

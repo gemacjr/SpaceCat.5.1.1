@@ -18,6 +18,7 @@
 		2C157F991B2CC5180079E4EE /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F971B2CC5180079E4EE /* Explosion.sks */; };
 		2C157F9A1B2CC5180079E4EE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C157F981B2CC5180079E4EE /* spark.png */; };
 		2C157F9D1B2CC87C0079E4EE /* GMHudNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C157F9C1B2CC87C0079E4EE /* GMHudNode.m */; };
+		2C157FA01B2CD3EF0079E4EE /* GMGameOverNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C157F9F1B2CD3EF0079E4EE /* GMGameOverNode.m */; };
 		2C5AA4E21B2B790000A5987D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E11B2B790000A5987D /* Foundation.framework */; };
 		2C5AA4E41B2B790000A5987D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */; };
 		2C5AA4E61B2B790000A5987D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C5AA4E51B2B790000A5987D /* UIKit.framework */; };
@@ -67,6 +68,8 @@
 		2C157F981B2CC5180079E4EE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		2C157F9B1B2CC87C0079E4EE /* GMHudNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMHudNode.h; sourceTree = "<group>"; };
 		2C157F9C1B2CC87C0079E4EE /* GMHudNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMHudNode.m; sourceTree = "<group>"; };
+		2C157F9E1B2CD3EF0079E4EE /* GMGameOverNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMGameOverNode.h; sourceTree = "<group>"; };
+		2C157F9F1B2CD3EF0079E4EE /* GMGameOverNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMGameOverNode.m; sourceTree = "<group>"; };
 		2C5AA4DE1B2B790000A5987D /* Space Cat 5.1.1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Cat 5.1.1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C5AA4E11B2B790000A5987D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2C5AA4E31B2B790000A5987D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +187,8 @@
 				2C157F821B2CB6B90079E4EE /* Sounds */,
 				2CF06F081B2BF38700E67C87 /* GMUtil.h */,
 				2CF06F091B2BF38700E67C87 /* GMUtil.m */,
+				2C157F9E1B2CD3EF0079E4EE /* GMGameOverNode.h */,
+				2C157F9F1B2CD3EF0079E4EE /* GMGameOverNode.m */,
 				2CF06EF51B2BC13400E67C87 /* GMTitleScene.h */,
 				2CF06EF61B2BC13400E67C87 /* GMTitleScene.m */,
 				2C157F9B1B2CC87C0079E4EE /* GMHudNode.h */,
@@ -357,6 +362,7 @@
 				2CF06F051B2BEABD00E67C87 /* GMProjectileNode.m in Sources */,
 				2CF06F0D1B2BFB6C00E67C87 /* GMSpaceDogNode.m in Sources */,
 				2CF06EFA1B2BC2E000E67C87 /* GMGamePlayScene.m in Sources */,
+				2C157FA01B2CD3EF0079E4EE /* GMGameOverNode.m in Sources */,
 				2CF06F101B2BFF3800E67C87 /* GMGroundNode.m in Sources */,
 				2CF06F0A1B2BF38700E67C87 /* GMUtil.m in Sources */,
 				2C157F9D1B2CC87C0079E4EE /* GMHudNode.m in Sources */,

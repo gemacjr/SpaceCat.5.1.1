@@ -12,6 +12,7 @@ static const int GMProjectileSpeed = 300;
 static const int GMSpaceDogMinSpeed = -100;
 static const int GMSpaceDogMaxSpeed = -50;
 static const int GMMaxLives = 5;
+static const int GMPointsPerHit = 100;
 
 typedef NS_OPTIONS(uint32_t, GMCollisionCategory) {
     GMCollisionCategoryEnemy        = 1 << 0,       // 0000
